@@ -1,8 +1,13 @@
-<div style="height: 100vh; width: 100vw; background-color: black;margin: 0px; overflow: hidden;">
+<div style="min-height: 100vh; width: 100vw; background-color: black;margin: 0px;overflow-y: hidden; scrollbar-width: none;">
     <!-- Navbar -->
     <div
         style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;color: rgb(9, 99, 81); background-color: rgb(38, 216, 110); padding: 10px 40px;font-size: 30px; margin:0px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 500;">
         <p style="margin: 0px;">Routing</p>
+        <div 
+        style="   display: flex; gap:10px">
+        <p style="margin: 0px;border-radius: 10%; cursor: pointer; font-size: 20px; color: white;background-color: rgb(9, 9, 8);padding: 5px 15px;">{{value}}</p>
+        <p style="margin: 0px;border-radius: 10%; cursor: pointer; font-size: 20px; color: white;background-color: rgb(9, 9, 8);padding: 5px 15px;">{{value1}}</p>
+    </div>
         <div (click)="changeUser()"
             style="background-color: rgb(9, 9, 8); padding: 5px 15px; border-radius: 10%; cursor: pointer;">
             <p style="margin: 0px; font-size: 20px; color: white;">{{isUser?"User":"Admin"}}</p>

@@ -18,6 +18,7 @@ import { Project2Component } from './supersubcomponent/project2/project2.compone
 import { Project1Component } from './supersubcomponent/project1/project1.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     Activity3Component,
     Project3Component,
     Project2Component,
-    Project1Component
+    Project1Component,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

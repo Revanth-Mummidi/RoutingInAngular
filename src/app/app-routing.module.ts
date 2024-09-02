@@ -82,7 +82,7 @@ const routes: Routes = [
           },
           {
             path:"",
-            redirectTo:'project1',
+            redirectTo:'project2',
             pathMatch:'full'
           },
           {

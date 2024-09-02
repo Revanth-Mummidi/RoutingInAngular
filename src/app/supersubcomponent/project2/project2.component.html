@@ -1,5 +1,18 @@
-<div style="display: flex; flex-direction: row; gap: 20px; margin: 20px 2px;">
+<div  style="display: flex; flex-direction: row; gap: 20px; margin: 20px 2px;">
     <div *ngFor="let item of path; let last = last">
         <p *ngIf="item">{{item}}{{!last ? ' >' : ''}}</p> 
     </div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px;margin: 20px; ">
+    <input type="text" (change)="handleChange($event)"  placeholder="Enter value" style="padding: 15px 20px; border-radius: 10px; font-size: 20px; border: 1px solid rgb(9, 9, 8);"/>
+    
+    <div appHighlight [searchtext]="searchString"   style="font-size: 30px; overflow-y: scroll; height: 100%; padding: 10px;overflow-x: hidden; scrollbar-width: none;">
+        <p style="text-wrap: wrap;word-spacing: 10px;"> {{paragraphContent}} </p>
+ 
+
+            <p style="text-wrap: wrap;word-spacing: 10px; color:white"> {{paragraphContent}} </p>
+       
+         <!-- {{paragraphContent}} -->
+    </div>
+ 
 </div>

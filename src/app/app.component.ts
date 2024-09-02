@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { permissionGuardGuard } from './guards/permission-guard.guard';
+import { StatesService } from './services/states.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,11 @@ import { permissionGuardGuard } from './guards/permission-guard.guard';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor(private route:Router){}
+  constructor(private route:Router,private state:StatesService){}
   title = 'task4';
   isUser:boolean=false;
+  value:number=0;  
+  value1:number=this.state.behaviorSubject.value;
   ngOnInit(): void {
     
     if(!sessionStorage.getItem('user')){
@@ -22,6 +26,14 @@ export class AppComponent implements OnInit{
       this.route.navigate(['/projects']);
     }
     console.log(this.isUser);
+    this.state.subject.subscribe(newValue => {
+        this.value = newValue;
+        // console.log('State value changed:', newValue);
+    });
+    this.state.behaviorSubject.subscribe(newValue => {
+      this.value1 = newValue;
+      // console.log('State value changed:', newValue);
+    });
   }
   changeUser(){
     if(this.isUser){
