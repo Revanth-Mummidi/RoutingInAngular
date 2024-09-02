@@ -11,7 +11,7 @@ export class Project2Component {
   path:string[] = this.router.url.split('/');
   searchString:string = '';
   handleChange(event:any){
-    this.searchString = event.target.value;
+    console.log("value", event)
   }
   paragraphContent:string = `She counted. One. She could hear the steps coming closer. Two. Puffs of breath could be seen coming from his mouth. Three. He stopped beside her. Four. She pulled the trigger of the gun.
 Her hand was balled into a fist with her keys protruding out from between her fingers. This was the weapon her father had shown her how to make when she walked alone to her car after work. She wished that she had something a little more potent than keys between her fingers. It would have been nice to have some mace or pepper spray. He had been meaning to buy some but had never gotten around to it. As the mother bear took another step forward with her cubs in tow, she knew her fist with keys wasn't going to be an adequate defense for this situation.

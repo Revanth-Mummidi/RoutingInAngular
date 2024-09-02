@@ -4,14 +4,35 @@
     </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 20px;margin: 20px; ">
-    <input type="text" (change)="handleChange($event)"  placeholder="Enter value" style="padding: 15px 20px; border-radius: 10px; font-size: 20px; border: 1px solid rgb(9, 9, 8);"/>
+    <input type="text" [(ngModel)]="searchString" (ngModelChange)="handleChange($event)" placeholder="Enter value" style="padding: 15px 20px; border-radius: 10px; font-size: 20px; border: 1px solid rgb(9, 9, 8);"/>
     
-    <div appHighlight [searchtext]="searchString"   style="font-size: 30px; overflow-y: scroll; height: 100%; padding: 10px;overflow-x: hidden; scrollbar-width: none;">
+    <div appHighlight [searchtext]="searchString"   style="font-size: 30px; overflow-y: scroll; height: 100%; padding: 10px;overflow-x: hidden; scrollbar-width: none;color: white;">
         <p style="text-wrap: wrap;word-spacing: 10px;"> {{paragraphContent}} </p>
  
 
             <p style="text-wrap: wrap;word-spacing: 10px; color:white"> {{paragraphContent}} </p>
-       
+       <div>
+         <p>Paragraph Content 1</p>
+       </div>
+       <div>
+        Paragraph Content 2
+       </div>
+       <div>
+          <div>
+            <div>
+                <p>Paragraph Content 3</p>
+                <i style="font-size: x-large; color:red">Paragraph 
+                    <span style="color: blue;">
+
+                    Content 4
+                </span>
+            </i>
+            </div>
+          </div>
+          <div>
+            Paragraph Content 5
+          </div>
+       </div>
          <!-- {{paragraphContent}} -->
     </div>
  
