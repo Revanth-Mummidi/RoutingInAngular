@@ -42,11 +42,11 @@ export class HighlightDirective {
     }
     const regex = new RegExp(`(${searchtext})`, 'gi');
     const newText = text.replace(regex, `<span style="background-color: #e5f674; color:black">$1</span>`);
+    console.log("New Text",newText,text,regex);
     element.innerHTML = newText;
-
   }
 
-
+  
   private removeHighlighting() {
     const element = this.el.nativeElement;
     const spanRegex = /<span style="background-color: #e5f674; color:black">(.*?)<\/span>/gi;
